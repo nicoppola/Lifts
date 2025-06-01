@@ -14,11 +14,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen() {
-    val viewModel = MainViewModel()
+    val viewModel = koinViewModel<MainViewModel>()
     val uiState by viewModel.uiState.collectAsState()
 
     Scaffold(
